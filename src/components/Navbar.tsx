@@ -45,8 +45,19 @@ export default function Navbar() {
         style={{ animation: 'heroFadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both' }}
       >
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 h-16">
-          <Link to="/" className="flex items-center gap-2 font-semibold text-white">
+          <Link to="/" className="flex items-center gap-2.5 font-semibold text-white">
             <img src={logo} alt="Tanda AI" className="h-8 w-auto" />
+            <span
+              className="text-lg font-bold tracking-wide"
+              style={{
+                background: 'linear-gradient(135deg, #FFD700, #DAA520, #F5C842)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              TANDA AI
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
