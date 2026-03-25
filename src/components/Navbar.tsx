@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '/contact' },
@@ -13,6 +14,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -29,9 +31,20 @@ export default function Navbar() {
     setMobileOpen(false);
     if (href.startsWith('/#')) {
       const id = href.slice(2);
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (location.pathname !== '/') {
+        // Navigate home first, then scroll after the page loads
+        navigate('/');
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     }
   };
@@ -56,7 +69,7 @@ export default function Navbar() {
                 backgroundClip: 'text',
               }}
             >
-              Tanda AI
+              TANDA AI
             </span>
           </Link>
 
