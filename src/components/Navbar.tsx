@@ -56,7 +56,7 @@ export default function Navbar() {
                 backgroundClip: 'text',
               }}
             >
-              TANDA AI
+              Tanda AI
             </span>
           </Link>
 
