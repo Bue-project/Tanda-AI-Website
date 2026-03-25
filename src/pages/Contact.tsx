@@ -1,60 +1,145 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Calendar, Mail, Globe } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
-export default function Contact() {
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contact', href: '/contact' },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
+
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    if (href.startsWith('/#')) {
+      const id = href.slice(2);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 nav-glass ${
+          scrolled ? 'nav-scrolled' : 'bg-[rgba(4,7,13,0.75)]'
+        } border-b border-[var(--color-border)]`}
+        style={{ animation: 'heroFadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both' }}
+      >
+        <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 h-16">
+          <Link to="/" className="flex items-center gap-2.5 font-semibold text-white">
+            <img src={logo} alt="Tanda AI" className="h-8 w-auto" />
+            <span
+              className="text-lg font-bold tracking-wide"
+              style={{
+                background: 'linear-gradient(135deg, #FFD700, #DAA520, #F5C842)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              TANDA AI
+            </span>
+          </Link>
 
-      <section className="pt-32 pb-24 px-6">
-        <div className="max-w-[700px] mx-auto text-center hero-stagger">
-          <h1 className="font-['Instrument_Serif'] text-[clamp(2.5rem,5vw,4rem)] font-normal text-white mb-4">
-            Contact Us
-          </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-12">
-            Let's Build Something Together. Book a free 30-minute call. We'll walk through your goals, design the right voice AI setup, and show you exactly how it fits your business.
-          </p>
-
-          <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-10 mb-10">
-            <div className="flex items-center justify-center gap-2 text-[var(--color-accent)] mb-4">
-              <Calendar size={24} />
-              <h2 className="text-xl font-semibold">Book a Free Strategy Call</h2>
-            </div>
-            <p className="text-muted-foreground mb-6 text-sm">
-              30 minutes. No sales pressure. Walk away with a clear picture of how voice AI fits your business.
-            </p>
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) =>
+              link.href.startsWith('/#') ? (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-muted-foreground hover:text-white transition-colors text-sm"
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-white transition-colors text-sm"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <a
               href="https://calendar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-full px-8 py-3 font-semibold text-sm btn-glow"
+              className="bg-[var(--color-accent)] text-white rounded-full px-5 py-2 text-sm font-semibold btn-glow"
             >
-              Choose a time →
+              Book A Free Call →
             </a>
           </div>
 
-          <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8">
-            <h3 className="text-white font-semibold text-lg mb-6">Contact Information</h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div className="flex items-center justify-center gap-3">
-                <Mail size={16} className="text-[var(--color-accent)]" />
-                <span>Email: hello@tanda.ai</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-base">💬</span>
-                <span>Response time: Within 24 hours</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <Globe size={16} className="text-[var(--color-accent)]" />
-                <span>We work with teams worldwide, fully remote</span>
-              </div>
-            </div>
-          </div>
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={24} />
+          </button>
         </div>
-      </section>
+      </nav>
 
-      <Footer />
-    </div>
+      {/* Mobile overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[200] bg-[var(--color-bg)] flex flex-col items-center justify-center gap-8">
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="absolute top-5 right-6 text-white"
+            aria-label="Close menu"
+          >
+            <X size={28} />
+          </button>
+          {navLinks.map((link) =>
+            link.href.startsWith('/#') ? (
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.href)}
+                className="text-2xl text-white font-light"
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="text-2xl text-white font-light"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+          <a
+            href="https://calendar.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[var(--color-accent)] text-white rounded-full px-8 py-3 text-lg font-semibold btn-glow"
+          >
+            Book A Free Call →
+          </a>
+        </div>
+      )}
+    </>
   );
 }
