@@ -36,7 +36,7 @@ export default function Contact() {
             <div className="space-y-4 text-sm text-muted-foreground">
               <div className="flex items-center justify-center gap-3">
                 <Mail size={16} className="text-[var(--color-accent)]" />
-                <span>Email: hello@tanda.ai</span>
+                <span>Email: hello@tandaai.com</span>
               </div>
               <div className="flex items-center justify-center gap-3">
                 <span className="text-base">💬</span>
