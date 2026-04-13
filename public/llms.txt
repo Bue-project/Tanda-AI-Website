@@ -1,6 +1,6 @@
 # Tanda AI
 
-> Tanda AI builds and deploys conversational voice AI agents for businesses. Our agents handle inbound and outbound calls, qualify leads, book appointments, and route calls to human agents — so your team can focus on closing.
+> We build and deploy voice AI agents that handle calls, qualify leads, and book appointments — so your team focuses on closing, not answering.
 
 ## What We Do
 
