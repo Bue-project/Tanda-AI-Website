@@ -10,7 +10,21 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# AI / LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: *
 Allow: /
 
 Sitemap: https://tandaai.com/sitemap.xml
+LLMs: https://tandaai.com/llms.txt

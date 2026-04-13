@@ -1,0 +1,59 @@
+# Tanda AI
+
+> Tanda AI builds and deploys conversational voice AI agents for businesses. Our agents handle inbound and outbound calls, qualify leads, book appointments, and route calls to human agents — so your team can focus on closing.
+
+## What We Do
+
+Tanda AI is a platform that builds and deploys voice AI agents for business automation. We replace manual call handling with intelligent, always-on AI that sounds human, integrates with your tools, and goes live in days — not months.
+
+## Services
+
+- **Inbound Voice AI**: 24/7 call answering, lead qualification, appointment booking, FAQ handling, and smart call routing
+- **Outbound Voice AI**: Automated follow-up calls, appointment reminders, and outreach campaigns
+- **AI Receptionist**: A fully branded virtual front desk that handles all customer calls around the clock
+- **Voice AI Strategy**: Consulting and custom AI agent design tailored to your business call flows
+
+## Features
+
+- Natural Language Understanding — conversational AI that understands intent, not just keywords
+- Custom Voice & Persona — branded voice identity that matches your company tone
+- Smart Call Routing — context-aware transfers to the right team or human agent
+- Lead Qualification — automatically scores and qualifies leads during the call
+- Call Analytics — full transcripts, sentiment analysis, and performance dashboards
+- CRM & Tool Sync — integrates with your existing CRM, calendar, and business tools
+
+## Who We Help
+
+Service businesses, medical clinics, real estate agencies, law firms, and e-commerce brands — any organisation that handles high call volumes and wants reliable, always-on call management without expanding headcount.
+
+## Pricing
+
+- **Starter**: $50/month
+- **Pro**: $90/month (most popular)
+- **Enterprise**: Custom pricing
+
+Most clients go live within 5–10 business days after onboarding.
+
+## Contact
+
+- Website: https://tandaai.com
+- Email: hello@tandaai.com
+- LinkedIn: https://www.linkedin.com/company/tandaai/
+- Response time: within 24 hours
+
+## FAQ
+
+**What is a voice AI agent?**
+A voice AI agent is an intelligent virtual assistant that handles real phone calls — answering questions, booking appointments, qualifying leads, and more — using natural, human-like speech.
+
+**How human does the voice sound?**
+Very natural. We use the latest voice synthesis technology to create warm, fluent voices that callers rarely distinguish from a real person.
+
+**What kinds of businesses use voice AI?**
+Service businesses, clinics, real estate agencies, e-commerce brands — any business that regularly receives or makes calls and wants to handle them more efficiently.
+
+**How fast can we go live?**
+Most clients are live within 5–10 business days, depending on call flow complexity and the number of integrations required.
+
+**Can the AI hand off to a human?**
+Yes. When a caller needs escalation, the AI seamlessly transfers the call to a live agent and provides a full context summary so nothing is repeated.
