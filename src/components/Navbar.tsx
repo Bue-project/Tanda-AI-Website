@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Calculator', href: '/calculator' },
 ];
 
 export default function Navbar() {
@@ -32,7 +33,6 @@ export default function Navbar() {
     if (href.startsWith('/#')) {
       const id = href.slice(2);
       if (location.pathname !== '/') {
-        // Navigate home first, then scroll after the page loads
         navigate('/');
         setTimeout(() => {
           const el = document.getElementById(id);
