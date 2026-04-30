@@ -11,7 +11,7 @@ export default function CalculatorPage() {
       <Navbar />
       <main className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div ref={headingRef} className="text-center mb-10 fade-in-up">
+          <div ref={headingRef} className="text-center mb-6 fade-in-up">
             <p className="text-[var(--color-accent)] text-xs font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-3">
               Revenue Calculator
             </p>
@@ -22,7 +22,31 @@ export default function CalculatorPage() {
               See what missed calls and dormant patients are costing your practice — then fix it with Tanda AI.
             </p>
           </div>
+          <p className="text-center text-white/35 text-xs font-['Inter'] mb-10 tracking-wide">
+            35% of calls missed&nbsp;&nbsp;·&nbsp;&nbsp;£401k avg annual leakage&nbsp;&nbsp;·&nbsp;&nbsp;15% AI reactivation rate
+          </p>
           <ROICalculator />
+          <div className="mt-10 text-center">
+            <p className="text-white/50 font-['Inter'] text-sm mb-4">
+              Ready to stop the leak? Book a free 20-minute strategy call.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://calendar.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[var(--color-accent)] text-black rounded-full px-8 py-3 font-semibold text-sm btn-glow"
+              >
+                Book A Free Call →
+              </a>
+              <a
+                href="mailto:hello@tanda.ai"
+                className="text-white/40 hover:text-white text-sm transition-colors"
+              >
+                or email hello@tanda.ai
+              </a>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
