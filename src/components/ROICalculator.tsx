@@ -29,46 +29,6 @@ function InfoTooltip({ text }: { text: string }) {
   )
 }
 
-function ModeToggle({ mode, setMode }: { mode: Mode; setMode: (m: Mode) => void }) {
-  return (
-    <div className="inline-flex bg-white/5 border border-[var(--color-border)] rounded-full p-1 gap-1">
-      {(['missed', 'reactivation'] as Mode[]).map((m) => (
-        <button
-          key={m}
-          onClick={() => setMode(m)}
-          className={`px-4 py-1.5 rounded-full text-xs font-semibold font-['Plus_Jakarta_Sans'] transition-all duration-200 whitespace-nowrap ${
-            mode === m
-              ? 'bg-[var(--color-accent)] text-black shadow-sm'
-              : 'text-white/50 hover:text-white'
-          }`}
-        >
-          {m === 'missed' ? 'Missed Calls ROI' : 'Database Reactivation'}
-        </button>
-      ))}
-    </div>
-  )
-}
-
-function SpecialtyToggle({ specialty, setSpecialty }: { specialty: Specialty; setSpecialty: (s: Specialty) => void }) {
-  return (
-    <div className="inline-flex bg-white/5 border border-[var(--color-border)] rounded-full p-1 gap-1">
-      {(['dental', 'aesthetics'] as Specialty[]).map((s) => (
-        <button
-          key={s}
-          onClick={() => setSpecialty(s)}
-          className={`px-3 py-1 rounded-full text-[11px] font-semibold font-['Plus_Jakarta_Sans'] transition-all duration-200 ${
-            specialty === s
-              ? 'bg-white/15 text-white'
-              : 'text-white/40 hover:text-white/70'
-          }`}
-        >
-          {s === 'dental' ? 'Dental' : 'Aesthetics'}
-        </button>
-      ))}
-    </div>
-  )
-}
-
 function SliderRow({
   label,
   tooltip,
@@ -99,7 +59,7 @@ function SliderRow({
           {label}
           <InfoTooltip text={tooltip} />
         </span>
-        <span className="text-[var(--color-accent)] font-bold font-['Plus_Jakarta_Sans'] text-base tabular-nums">
+        <span className="text-[var(--color-accent)] font-bold font-['Plus_Jakarta_Sans'] text-base tabular-nums ml-3 shrink-0">
           {display}
         </span>
       </div>
@@ -149,49 +109,88 @@ export default function ROICalculator() {
   return (
     <div>
       <div
-        className="rounded-2xl border p-6 md:p-8"
+        className="rounded-2xl border p-5 sm:p-6 md:p-8"
         style={{ backgroundColor: 'var(--color-bg-card)', borderColor: 'var(--color-border)' }}
       >
-        {/* Toggles row */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-          <ModeToggle mode={mode} setMode={setMode} />
-          <SpecialtyToggle specialty={specialty} setSpecialty={setSpecialty} />
+        {/* Toggles */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+          {/* Mode toggle */}
+          <div className="flex bg-white/5 border border-[var(--color-border)] rounded-full p-1 gap-1 w-full sm:w-auto">
+            <button
+              onClick={() => setMode('missed')}
+              className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold font-['Plus_Jakarta_Sans'] transition-all duration-200 whitespace-nowrap ${
+                mode === 'missed'
+                  ? 'bg-[var(--color-accent)] text-black'
+                  : 'text-white/50 hover:text-white'
+              }`}
+            >
+              <span className="sm:hidden">Missed Calls</span>
+              <span className="hidden sm:inline">Missed Calls ROI</span>
+            </button>
+            <button
+              onClick={() => setMode('reactivation')}
+              className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold font-['Plus_Jakarta_Sans'] transition-all duration-200 whitespace-nowrap ${
+                mode === 'reactivation'
+                  ? 'bg-[var(--color-accent)] text-black'
+                  : 'text-white/50 hover:text-white'
+              }`}
+            >
+              <span className="sm:hidden">Reactivation</span>
+              <span className="hidden sm:inline">Database Reactivation</span>
+            </button>
+          </div>
+
+          {/* Specialty toggle */}
+          <div className="flex bg-white/5 border border-[var(--color-border)] rounded-full p-1 gap-1 w-full sm:w-auto">
+            {(['dental', 'aesthetics'] as Specialty[]).map((s) => (
+              <button
+                key={s}
+                onClick={() => setSpecialty(s)}
+                className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold font-['Plus_Jakarta_Sans'] transition-all duration-200 capitalize ${
+                  specialty === s
+                    ? 'bg-white/15 text-white'
+                    : 'text-white/40 hover:text-white/70'
+                }`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {/* Main content: result + sliders */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           {/* Left — Result */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between gap-6">
             <div>
               <p className="text-white/40 font-['Inter'] text-[11px] uppercase tracking-widest mb-2">
                 {mode === 'missed' ? 'Annual Revenue Leakage' : 'Reactivation Potential'}
               </p>
               <div
-                className="font-['Instrument_Serif'] text-5xl md:text-6xl tabular-nums leading-none mb-3"
+                className="font-['Instrument_Serif'] text-[clamp(2.5rem,8vw,3.75rem)] tabular-nums leading-none mb-2"
                 style={{ color: '#F59E0B' }}
               >
                 {gbp.format(result)}
               </div>
-              <p className="text-white/30 font-['Inter'] text-xs leading-relaxed max-w-[220px]">
+              <p className="text-white/30 font-['Inter'] text-xs leading-relaxed">
                 {mode === 'missed'
                   ? '85% attendance · 50% treatment start rate'
                   : '15% AI reactivation reach rate'}
               </p>
             </div>
 
-            <div className="mt-8">
-              <a
-                href="https://calendar.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[var(--color-accent)] text-black rounded-full px-6 py-2.5 font-semibold font-['Plus_Jakarta_Sans'] text-sm btn-glow"
-              >
-                Recover This Revenue →
-              </a>
-            </div>
+            <a
+              href="https://calendar.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-fit bg-[var(--color-accent)] text-black rounded-full px-6 py-2.5 font-semibold font-['Plus_Jakarta_Sans'] text-sm btn-glow"
+            >
+              Recover This Revenue →
+            </a>
           </div>
 
           {/* Right — Sliders */}
-          <div className="space-y-6">
+          <div className="space-y-5">
             {mode === 'missed' ? (
               <>
                 <SliderRow
