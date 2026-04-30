@@ -9,8 +9,11 @@ import FAQ from '@/components/FAQ';
 import ROICalculator from '@/components/ROICalculator';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Index() {
+  const calcRef = useScrollReveal<HTMLDivElement>();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -20,23 +23,23 @@ export default function Index() {
       <Services />
       <Features />
       <Comparison />
-      <FAQ />
-      <section id="calculator" className="py-20 px-4">
+      <section id="calculator" className="py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 fade-in-up">
-            <p className="text-[var(--color-accent)] text-sm font-semibold font-['Plus_Jakarta_Sans'] uppercase tracking-widest mb-4">
+          <div ref={calcRef} className="text-center mb-10 fade-in-up">
+            <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
               Revenue Calculator
-            </p>
-            <h2 className="font-['Instrument_Serif'] text-3xl md:text-4xl text-white mb-4">
-              Calculate Your Revenue Leakage
+            </span>
+            <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white mt-2 mb-3">
+              What Is Your Practice Losing Right Now?
             </h2>
-            <p className="text-white/60 max-w-xl mx-auto font-['Inter']">
-              See in seconds what missed calls and dormant patients are costing your practice.
+            <p className="text-muted-foreground max-w-xl mx-auto font-['Inter']">
+              Move the sliders to see your real revenue leakage in seconds.
             </p>
           </div>
           <ROICalculator />
         </div>
       </section>
+      <FAQ />
       <CTA />
       <Footer />
     </div>
