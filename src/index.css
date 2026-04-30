@@ -186,3 +186,16 @@
 .code-comment { color: #546e7a; }
 .code-func { color: #f78c6c; }
 .code-self { color: #f07178; }
+
+/* Calculator slider theming */
+.calculator-slider [data-slot="slider-track"] {
+  background-color: rgba(216, 231, 242, 0.07);
+}
+.calculator-slider [data-slot="slider-range"] {
+  background-color: var(--color-accent);
+}
+.calculator-slider [data-slot="slider-thumb"] {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(212, 168, 67, 0.4);
+}
