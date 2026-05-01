@@ -38,7 +38,7 @@ export default function Services() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Services
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)]">
             What We Build For You
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
@@ -54,10 +54,10 @@ export default function Services() {
                 <s.icon size={18} className="text-[var(--color-accent)]" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-white font-semibold mb-1.5">{s.title}</h3>
+                <h3 className="text-[var(--color-text)] font-semibold mb-1.5">{s.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </div>
-              <span className="text-white/20 group-hover:text-[var(--color-accent)] transition-colors text-xl shrink-0 pt-0.5">→</span>
+              <span className="text-[#0D1B2E]/20 group-hover:text-[var(--color-accent)] transition-colors text-xl shrink-0 pt-0.5">→</span>
             </div>
           ))}
         </div>

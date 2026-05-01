@@ -29,7 +29,7 @@ export default function Benefits() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Why Tanda
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">Built Around Your Business</h2>
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)]">Built Around Your Business</h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Reliable, professional, and always on</p>
         </div>
 
@@ -39,19 +39,19 @@ export default function Benefits() {
               <div className="w-12 h-12 rounded-xl bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] flex items-center justify-center mb-5 mx-auto md:mx-0">
                 <b.icon size={20} className="text-[var(--color-accent)]" />
               </div>
-              <h3 className="font-['Instrument_Serif'] text-xl font-normal text-white mb-3">{b.title}</h3>
+              <h3 className="font-['Instrument_Serif'] text-xl font-normal text-[var(--color-text)] mb-3">{b.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-14 text-center">
-          <p className="text-white/40 text-sm font-['Inter'] mb-3">Sounds right for your business?</p>
+          <p className="text-[#0D1B2E]/40 text-sm font-['Inter'] mb-3">Sounds right for your business?</p>
           <a
             href="https://calendar.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[var(--color-accent)] hover:text-white text-sm font-semibold transition-colors duration-200 group"
+            className="inline-flex items-center gap-1.5 text-[var(--color-accent)] hover:text-[var(--color-text)] text-sm font-semibold transition-colors duration-200 group"
           >
             Book a free 20-minute call
             <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>

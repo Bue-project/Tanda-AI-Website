@@ -58,7 +58,7 @@ function StatItem({ stat }: { stat: Stat }) {
       <div className="font-['Instrument_Serif'] text-[clamp(2.5rem,5vw,3.75rem)] text-[var(--color-accent)] leading-none mb-3 tabular-nums">
         {stat.display(value)}
       </div>
-      <p className="text-white/45 text-xs font-['Inter'] leading-relaxed max-w-[130px] mx-auto">{stat.label}</p>
+      <p className="text-[#0D1B2E]/45 text-xs font-['Inter'] leading-relaxed max-w-[130px] mx-auto">{stat.label}</p>
     </div>
   )
 }

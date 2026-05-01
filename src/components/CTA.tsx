@@ -10,11 +10,11 @@ export default function CTA() {
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
           <div
             className="w-[900px] h-[600px] rounded-full blur-3xl"
-            style={{ background: 'radial-gradient(ellipse, rgba(212,168,67,0.07) 0%, transparent 60%)' }}
+            style={{ background: 'radial-gradient(ellipse, rgba(212,168,67,0.10) 0%, transparent 60%)' }}
           />
         </div>
         <div ref={ref} className="fade-in-up relative z-10 max-w-[700px] mx-auto text-center">
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-4">
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)] mb-4">
             Ready to Stop Missing Leads?
           </h2>
           <p className="text-muted-foreground mb-10 leading-relaxed">
@@ -23,7 +23,7 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:hello@tanda.ai"
-              className="text-muted-foreground hover:text-white transition-colors text-sm border border-[var(--color-border-strong)] rounded-full px-6 py-3"
+              className="text-muted-foreground hover:text-[var(--color-text)] transition-colors text-sm border border-[var(--color-border-strong)] rounded-full px-6 py-3"
             >
               hello@tanda.ai
             </a>

@@ -9,7 +9,7 @@ export default function WhatWeDo() {
         <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-6">
           What We Do
         </span>
-        <p className="font-['Instrument_Serif'] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-relaxed tracking-tight text-white font-normal">
+        <p className="font-['Instrument_Serif'] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-relaxed tracking-tight text-[var(--color-text)] font-normal">
           We design, build, and deploy intelligent voice systems that answer your calls, qualify leads, and book appointments — so your team focuses on{' '}
           <em className="italic text-[var(--color-accent)]">closing</em>, not answering.
         </p>

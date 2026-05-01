@@ -20,7 +20,7 @@ export default function Features() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Features
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">Built Into Every System We Deploy</h2>
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)]">Built Into Every System We Deploy</h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Every feature your business needs — included as standard.</p>
         </div>
 
@@ -30,7 +30,7 @@ export default function Features() {
               <div className="w-10 h-10 rounded-lg bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] flex items-center justify-center mb-4">
                 <f.icon size={18} className="text-[var(--color-accent)]" />
               </div>
-              <h3 className="text-white font-semibold mb-2">{f.title}</h3>
+              <h3 className="text-[var(--color-text)] font-semibold mb-2">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
@@ -41,7 +41,7 @@ export default function Features() {
             href="https://calendar.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-[var(--color-border-strong)] text-white/70 hover:text-white hover:border-[var(--color-accent)] rounded-full px-7 py-3 text-sm transition-colors duration-200"
+            className="inline-flex items-center gap-2 border border-[var(--color-border-strong)] text-[#0D1B2E]/60 hover:text-[var(--color-text)] hover:border-[var(--color-accent)] rounded-full px-7 py-3 text-sm transition-colors duration-200"
           >
             See how it works for your business →
           </a>

@@ -22,16 +22,16 @@ export default function Comparison() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Comparison
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">A Tanda System vs. Your Current Setup</h2>
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)]">A Tanda System vs. Your Current Setup</h2>
           <p className="text-muted-foreground mt-3">What changes when your phone line never misses a beat</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div ref={leftRef} className="fade-in-left border-glow-pulse bg-[var(--color-bg-card)] rounded-2xl p-8">
+          <div ref={leftRef} className="fade-in-left border border-[rgba(212,168,67,0.20)] border-glow-pulse bg-[var(--color-bg-card)] rounded-2xl p-8">
             <h3 className="text-[var(--color-accent)] font-semibold text-lg mb-6">With Tanda</h3>
             <ul className="space-y-4">
               {rows.map(([item]) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-white">
+                <li key={item} className="flex items-start gap-3 text-sm text-[var(--color-text)]">
                   <Check size={16} className="text-[var(--color-accent)] mt-0.5 shrink-0" />
                   {item}
                 </li>
@@ -52,11 +52,11 @@ export default function Comparison() {
           </div>
         </div>
 
-        <div ref={ctaRef} className="fade-in-up mt-10 bg-[rgba(212,168,67,0.07)] border border-[rgba(212,168,67,0.2)] rounded-2xl p-10 text-center">
-          <p className="font-['Instrument_Serif'] text-[clamp(1.5rem,3vw,2rem)] text-white mb-2">
+        <div ref={ctaRef} className="fade-in-up mt-10 bg-[rgba(212,168,67,0.10)] border border-[rgba(212,168,67,0.2)] rounded-2xl p-10 text-center">
+          <p className="font-['Instrument_Serif'] text-[clamp(1.5rem,3vw,2rem)] text-[var(--color-text)] mb-2">
             Stop losing leads. Start today.
           </p>
-          <p className="text-white/45 text-sm font-['Inter'] mb-7">
+          <p className="text-[#0D1B2E]/45 text-sm font-['Inter'] mb-7">
             Join the businesses already running on Tanda systems.
           </p>
           <a

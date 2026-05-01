@@ -39,7 +39,7 @@ export default function FAQ() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Questions
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">Frequently Asked Questions</h2>
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-[var(--color-text)]">Frequently Asked Questions</h2>
           <p className="text-muted-foreground mt-3">Everything you need to know</p>
         </div>
 
@@ -50,7 +50,7 @@ export default function FAQ() {
               value={`faq-${i}`}
               className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl px-6 overflow-hidden"
             >
-              <AccordionTrigger className="text-white hover:no-underline text-left py-5">
+              <AccordionTrigger className="text-[var(--color-text)] hover:no-underline text-left py-5">
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
@@ -61,13 +61,13 @@ export default function FAQ() {
         </Accordion>
 
         <div className="mt-12 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 text-center">
-          <h3 className="text-white text-xl font-semibold mb-3">Still Have Questions?</h3>
+          <h3 className="text-[var(--color-text)] text-xl font-semibold mb-3">Still Have Questions?</h3>
           <p className="text-muted-foreground mb-6 text-sm">Book a free call and we'll walk you through everything.</p>
           <a
             href="https://calendar.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-white rounded-full px-8 py-3 font-semibold text-sm btn-glow"
+            className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-black rounded-full px-8 py-3 font-semibold text-sm btn-glow"
           >
             Book A Free Call
           </a>
