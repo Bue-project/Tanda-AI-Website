@@ -68,13 +68,14 @@ export default function Services() {
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Not sure where to start? We audit your current call flow, identify where revenue is being lost, and design a bespoke system that fits your business goals perfectly.
             </p>
-            <div className="bg-[rgba(0,0,0,0.3)] rounded-lg p-4 overflow-x-auto code-block">
+            <div className="bg-[rgba(0,0,0,0.3)] rounded-lg p-4 code-block">
               <div className="text-muted-foreground text-xs mb-2">automation_agent.py</div>
-              <pre className="text-xs leading-relaxed">
-<span className="code-keyword">class</span> <span className="code-class">AutomationAgent</span>:{'
-'}{'  '}<span className="code-keyword">def</span> <span className="code-func">__init__</span>(<span className="code-self">self</span>, activation_limit):{'
-'}{'    '}<span className="code-self">self</span>.activation_limit = activation_limit{'
-'}{'    '}<span className="code-self">self</span>.current_mode = <span className="code-string">"idle"</span></pre>
+              <pre className="text-xs leading-relaxed whitespace-pre">{[
+                'class AutomationAgent:',
+                '  def __init__(self, activation_limit):',
+                '    self.activation_limit = activation_limit',
+                '    self.current_mode = "idle"',
+              ].join('\n')}</pre>
             </div>
           </div>
         </div>
