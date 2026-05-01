@@ -10,7 +10,7 @@ export default function WhatWeDo() {
           What We Do
         </span>
         <p className="font-['Instrument_Serif'] text-[clamp(1.5rem,3vw,2.25rem)] leading-relaxed text-white font-normal">
-          We build and deploy voice AI agents that handle calls, qualify leads, and book appointments — so your team focuses on{' '}
+          We design, build, and deploy intelligent voice systems that answer your calls, qualify leads, and book appointments — so your team focuses on{' '}
           <em className="italic text-[var(--color-accent)]">closing</em>, not answering.
         </p>
         <p className="text-muted-foreground mt-6 text-sm">— Tanda AI</p>

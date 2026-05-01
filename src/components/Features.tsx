@@ -2,12 +2,12 @@ import { Brain, Mic, GitBranch, Target, BarChart3, RefreshCw } from 'lucide-reac
 import { useStaggerReveal } from '@/hooks/useScrollReveal';
 
 const features = [
-  { icon: Brain, title: 'Natural Language Understanding', desc: 'Conversations that follow context and intent, not rigid scripts.' },
-  { icon: Mic, title: 'Custom Voice & Persona', desc: 'Choose the voice, tone, and personality that matches your brand.' },
-  { icon: GitBranch, title: 'Smart Call Routing', desc: 'Intelligently route calls to the right team or escalate to a live agent when needed.' },
-  { icon: Target, title: 'Lead Qualification', desc: 'Capture, qualify, and score inbound leads over the phone — automatically.' },
-  { icon: BarChart3, title: 'Call Analytics', desc: 'Track volumes, outcomes, and conversion rates in real time.' },
-  { icon: RefreshCw, title: 'CRM & Tool Sync', desc: 'Push call data, notes, and outcomes directly into your CRM and existing stack.' },
+  { icon: Brain, title: 'Conversations That Flow Naturally', desc: 'Callers are heard and understood — no rigid menus, no frustrating scripts. The system handles enquiries as naturally as talking to your best team member.' },
+  { icon: Mic, title: 'Your Brand, Your Voice', desc: 'We configure the tone, warmth, and personality to match your brand. Every caller hears a consistent, professional first impression — tailored to you.' },
+  { icon: GitBranch, title: 'Intelligent Call Routing', desc: 'Calls are routed to the right person, every time. Complex queries escalate to your team with full context — nothing gets lost.' },
+  { icon: Target, title: 'Lead Qualification', desc: 'The system captures intent, qualifies prospects, and scores inbound enquiries automatically — so your team only follows up on the leads that matter.' },
+  { icon: BarChart3, title: 'Clear Reporting', desc: "Track call volumes, booking rates, and outcomes in real time. See exactly what's working — and where to improve." },
+  { icon: RefreshCw, title: 'Seamless System Integration', desc: 'Call data, notes, and bookings push directly into your CRM and existing tools. Zero double-entry, zero manual handover.' },
 ];
 
 export default function Features() {
@@ -20,14 +20,14 @@ export default function Features() {
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Features
           </span>
-          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">Everything Your Voice AI Needs</h2>
-          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Built-in tools to run, track, and improve every call</p>
+          <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">Built Into Every System We Deploy</h2>
+          <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Every feature your business needs — included as standard.</p>
         </div>
 
         <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
             <div key={f.title} className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-7 card-hover">
-              <div className="w-11 h-11 rounded-lg bg-[rgb(16,19,28)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-4">
+              <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-4">
                 <f.icon size={20} className="text-[var(--color-accent)]" />
               </div>
               <h3 className="text-white font-semibold mb-2">{f.title}</h3>

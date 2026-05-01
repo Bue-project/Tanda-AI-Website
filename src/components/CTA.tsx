@@ -7,10 +7,10 @@ export default function CTA() {
     <section className="py-24 px-6">
       <div ref={ref} className="fade-in-up max-w-[700px] mx-auto text-center">
         <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-4">
-          Ready to Put Voice AI to Work?
+          Ready to Stop Missing Leads?
         </h2>
         <p className="text-muted-foreground mb-10 leading-relaxed">
-          Book a free call and we'll show you exactly how voice AI fits your business.
+          Book a free 20-minute call. We'll walk you through exactly how a Tanda system works for your business — and show you what it's costing you not to have one.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a

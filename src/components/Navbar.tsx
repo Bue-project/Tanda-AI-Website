@@ -53,7 +53,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 nav-glass ${
-          scrolled ? 'nav-scrolled' : 'bg-[rgba(4,7,13,0.75)]'
+          scrolled ? 'nav-scrolled' : 'bg-[rgba(13,27,46,0.75)]'
         } border-b border-[var(--color-border)]`}
         style={{ animation: 'heroFadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both' }}
       >
@@ -113,7 +113,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[200] bg-[var(--color-bg)] flex flex-col items-center justify-center gap-8">
           <button

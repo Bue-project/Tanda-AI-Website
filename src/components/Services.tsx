@@ -12,22 +12,22 @@ export default function Services() {
             Services
           </span>
           <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white">
-            Voice AI Services, Built for Your Business
+            What We Build For You
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-            Custom voice agents that handle real calls — so your team doesn't have to
+            Custom voice systems, fully deployed — from first enquiry to confirmed booking.
           </p>
         </div>
 
         <div ref={ref} className="grid md:grid-cols-2 gap-6">
           {/* Inbound */}
           <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgb(16,19,28)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
+            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
               <Phone size={20} className="text-[var(--color-accent)]" />
             </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Inbound Voice AI</h3>
+            <h3 className="text-white font-semibold text-lg mb-3">Inbound Call System</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Handle customer enquiries, support calls, and FAQs automatically with a natural-sounding AI agent.
+              We deploy a system that answers every inbound call professionally — handling enquiries, booking requests, and FAQs without putting callers on hold or sending them to voicemail.
             </p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               <li>• Appointment booking</li>
@@ -39,43 +39,42 @@ export default function Services() {
 
           {/* Outbound */}
           <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgb(16,19,28)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
+            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
               <PhoneOutgoing size={20} className="text-[var(--color-accent)]" />
             </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Outbound Voice AI</h3>
+            <h3 className="text-white font-semibold text-lg mb-3">Customer Reactivation</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Automate follow-up calls, appointment reminders, and outreach campaigns at scale.
+              We set up automated outreach campaigns that re-engage dormant customers — reminders, recall sequences, and follow-ups that bring lapsed clients back and fill your schedule.
             </p>
           </div>
 
-          {/* Receptionist - full width */}
+          {/* Receptionist */}
           <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgb(16,19,28)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
+            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
               <Headphones size={20} className="text-[var(--color-accent)]" />
             </div>
-            <h3 className="text-white font-semibold text-lg mb-3">AI Receptionist</h3>
+            <h3 className="text-white font-semibold text-lg mb-3">Always-On Receptionist</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              A 24/7 virtual front desk that greets callers, answers questions, qualifies leads, and books appointments — all without human involvement.
+              We build a 24/7 virtual receptionist that greets callers, answers questions, qualifies leads, and books appointments — keeping your business running at full capacity, around the clock.
             </p>
           </div>
 
-          {/* Strategy - with code block */}
+          {/* Strategy */}
           <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgb(16,19,28)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
+            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
               <Lightbulb size={20} className="text-[var(--color-accent)]" />
             </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Voice AI Strategy</h3>
+            <h3 className="text-white font-semibold text-lg mb-3">Growth Consultation</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Not sure where to start? We consult, design, and map out the right voice AI setup for your business goals.
+              Not sure where to start? We audit your current call flow, identify where revenue is being lost, and design a bespoke system that fits your business goals perfectly.
             </p>
-            <div className="bg-[rgb(16,19,28)] rounded-lg p-4 overflow-x-auto code-block">
+            <div className="bg-[rgba(0,0,0,0.3)] rounded-lg p-4 overflow-x-auto code-block">
               <div className="text-muted-foreground text-xs mb-2">automation_agent.py</div>
               <pre className="text-xs leading-relaxed">
-<span className="code-keyword">class</span> <span className="code-class">AutomationAgent</span>:{'\n'}
-{'  '}<span className="code-keyword">def</span> <span className="code-func">__init__</span>(<span className="code-self">self</span>, activation_limit):{'\n'}
-{'    '}<span className="code-self">self</span>.activation_limit = activation_limit{'\n'}
-{'    '}<span className="code-self">self</span>.current_mode = <span className="code-string">"idle"</span>
-              </pre>
+<span className="code-keyword">class</span> <span className="code-class">AutomationAgent</span>:{'
+'}{'  '}<span className="code-keyword">def</span> <span className="code-func">__init__</span>(<span className="code-self">self</span>, activation_limit):{'
+'}{'    '}<span className="code-self">self</span>.activation_limit = activation_limit{'
+'}{'    '}<span className="code-self">self</span>.current_mode = <span className="code-string">"idle"</span></pre>
             </div>
           </div>
         </div>
