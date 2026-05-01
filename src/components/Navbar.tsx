@@ -36,15 +36,11 @@ export default function Navbar() {
         navigate('/');
         setTimeout(() => {
           const el = document.getElementById(id);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
         const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
@@ -53,12 +49,12 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 nav-glass ${
-          scrolled ? 'nav-scrolled' : 'bg-[rgba(13,27,46,0.75)]'
+          scrolled ? 'nav-scrolled' : 'bg-white/90'
         } border-b border-[var(--color-border)]`}
         style={{ animation: 'heroFadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both' }}
       >
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 h-16">
-          <Link to="/" className="flex items-center gap-2.5 font-semibold text-white">
+          <Link to="/" className="flex items-center gap-2.5">
             <img src={logo} alt="Tanda AI" className="h-8 w-auto" />
             <span
               className="text-lg font-bold tracking-wide"
@@ -79,7 +75,7 @@ export default function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-muted-foreground hover:text-white transition-colors text-sm"
+                  className="text-muted-foreground hover:text-[var(--color-text)] transition-colors text-sm"
                 >
                   {link.label}
                 </button>
@@ -87,7 +83,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-muted-foreground hover:text-white transition-colors text-sm"
+                  className="text-muted-foreground hover:text-[var(--color-text)] transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
@@ -97,14 +93,14 @@ export default function Navbar() {
               href="https://calendar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[var(--color-accent)] text-white rounded-full px-5 py-2 text-sm font-semibold btn-glow"
+              className="bg-[var(--color-accent)] text-black rounded-full px-5 py-2 text-sm font-semibold btn-glow"
             >
               Book A Free Call →
             </a>
           </div>
 
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-[var(--color-text)]"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -117,7 +113,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[200] bg-[var(--color-bg)] flex flex-col items-center justify-center gap-8">
           <button
             onClick={() => setMobileOpen(false)}
-            className="absolute top-5 right-6 text-white"
+            className="absolute top-5 right-6 text-[var(--color-text)]"
             aria-label="Close menu"
           >
             <X size={28} />
@@ -127,7 +123,7 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="text-2xl text-white font-light"
+                className="text-2xl text-[var(--color-text)] font-light"
               >
                 {link.label}
               </button>
@@ -135,7 +131,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 to={link.href}
-                className="text-2xl text-white font-light"
+                className="text-2xl text-[var(--color-text)] font-light"
               >
                 {link.label}
               </Link>
@@ -145,7 +141,7 @@ export default function Navbar() {
             href="https://calendar.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[var(--color-accent)] text-white rounded-full px-8 py-3 text-lg font-semibold btn-glow"
+            className="bg-[var(--color-accent)] text-black rounded-full px-8 py-3 text-lg font-semibold btn-glow"
           >
             Book A Free Call →
           </a>
