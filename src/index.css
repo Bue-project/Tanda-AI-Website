@@ -41,10 +41,10 @@
     --color-bg: #0D1B2E;
     --color-accent: #D4A843;
     --color-accent-glow: rgba(212, 168, 67, 0.18);
-    --color-border: rgba(255, 255, 255, 0.09);
-    --color-border-strong: rgba(255, 255, 255, 0.18);
-    --color-bg-card: rgba(255, 255, 255, 0.05);
-    --color-bg-card-hover: rgba(255, 255, 255, 0.09);
+    --color-border: rgba(212, 168, 67, 0.10);
+    --color-border-strong: rgba(212, 168, 67, 0.22);
+    --color-bg-card: rgba(212, 168, 67, 0.04);
+    --color-bg-card-hover: rgba(212, 168, 67, 0.07);
   }
 }
 
@@ -167,9 +167,25 @@
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  border-color: var(--color-border-strong);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 168, 67, 0.06);
+  border-color: rgba(212, 168, 67, 0.25);
 }
+
+/* Elegant gold line divider */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,168,67,0.25), transparent);
+  border: none;
+}
+
+/* Service row */
+.service-row {
+  border-top: 1px solid rgba(212,168,67,0.10);
+  padding: 2rem 0;
+  transition: background 0.25s ease;
+}
+.service-row:last-child { border-bottom: 1px solid rgba(212,168,67,0.10); }
+.service-row:hover { background: rgba(212,168,67,0.03); }
 
 /* Particle canvas */
 #particle-canvas {
@@ -219,7 +235,7 @@
   box-shadow: 0 18px 45px rgba(0, 10, 30, 0.5);
 }
 
-/* Bounce chevron — kept for reference */
+/* Bounce chevron */
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }

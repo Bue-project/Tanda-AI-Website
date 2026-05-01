@@ -1,5 +1,5 @@
 import { Brain, Mic, GitBranch, Target, BarChart3, RefreshCw } from 'lucide-react';
-import { useStaggerReveal } from '@/hooks/useScrollReveal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const features = [
   { icon: Brain, title: 'Conversations That Flow Naturally', desc: 'Callers are heard and understood — no rigid menus, no frustrating scripts. The system handles enquiries as naturally as talking to your best team member.' },
@@ -11,7 +11,7 @@ const features = [
 ];
 
 export default function Features() {
-  const ref = useStaggerReveal<HTMLDivElement>();
+  const ref = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="py-24 px-6">
@@ -24,11 +24,11 @@ export default function Features() {
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Every feature your business needs — included as standard.</p>
         </div>
 
-        <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="fade-in-up grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
           {features.map((f) => (
-            <div key={f.title} className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-7 card-hover">
-              <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-4">
-                <f.icon size={20} className="text-[var(--color-accent)]" />
+            <div key={f.title}>
+              <div className="w-10 h-10 rounded-lg bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] flex items-center justify-center mb-4">
+                <f.icon size={18} className="text-[var(--color-accent)]" />
               </div>
               <h3 className="text-white font-semibold mb-2">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>

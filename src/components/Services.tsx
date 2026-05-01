@@ -1,8 +1,35 @@
 import { Phone, PhoneOutgoing, Headphones, Lightbulb } from 'lucide-react';
-import { useStaggerReveal } from '@/hooks/useScrollReveal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+
+const services = [
+  {
+    num: '01',
+    icon: Phone,
+    title: 'Inbound Call System',
+    desc: 'We deploy a system that answers every inbound call professionally — handling enquiries, booking requests, and FAQs without putting callers on hold or sending them to voicemail.',
+  },
+  {
+    num: '02',
+    icon: PhoneOutgoing,
+    title: 'Customer Reactivation',
+    desc: 'We set up automated outreach campaigns that re-engage dormant customers — reminders, recall sequences, and follow-ups that bring lapsed clients back and fill your schedule.',
+  },
+  {
+    num: '03',
+    icon: Headphones,
+    title: 'Always-On Receptionist',
+    desc: 'We build a 24/7 virtual receptionist that greets callers, answers questions, qualifies leads, and books appointments — keeping your business running at full capacity, around the clock.',
+  },
+  {
+    num: '04',
+    icon: Lightbulb,
+    title: 'Growth Consultation',
+    desc: 'Not sure where to start? We audit your current call flow, identify where revenue is being lost, and design a bespoke system that fits your business goals perfectly.',
+  },
+];
 
 export default function Services() {
-  const ref = useStaggerReveal<HTMLDivElement>();
+  const ref = useScrollReveal<HTMLDivElement>();
 
   return (
     <section id="services" className="py-24 px-6">
@@ -19,65 +46,20 @@ export default function Services() {
           </p>
         </div>
 
-        <div ref={ref} className="grid md:grid-cols-2 gap-6">
-          {/* Inbound */}
-          <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
-              <Phone size={20} className="text-[var(--color-accent)]" />
+        <div ref={ref} className="fade-in-up max-w-[900px] mx-auto">
+          {services.map((s) => (
+            <div key={s.title} className="service-row group flex items-start gap-6">
+              <span className="font-['Instrument_Serif'] text-lg text-[var(--color-accent)] opacity-50 w-8 shrink-0 pt-0.5">{s.num}</span>
+              <div className="w-10 h-10 rounded-lg bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] flex items-center justify-center shrink-0">
+                <s.icon size={18} className="text-[var(--color-accent)]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-white font-semibold mb-1.5">{s.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+              </div>
+              <span className="text-white/20 group-hover:text-[var(--color-accent)] transition-colors text-xl shrink-0 pt-0.5">→</span>
             </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Inbound Call System</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              We deploy a system that answers every inbound call professionally — handling enquiries, booking requests, and FAQs without putting callers on hold or sending them to voicemail.
-            </p>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>• Appointment booking</li>
-              <li>• Lead qualification</li>
-              <li>• Call routing</li>
-              <li>• FAQ handling</li>
-            </ul>
-          </div>
-
-          {/* Outbound */}
-          <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
-              <PhoneOutgoing size={20} className="text-[var(--color-accent)]" />
-            </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Customer Reactivation</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We set up automated outreach campaigns that re-engage dormant customers — reminders, recall sequences, and follow-ups that bring lapsed clients back and fill your schedule.
-            </p>
-          </div>
-
-          {/* Receptionist */}
-          <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
-              <Headphones size={20} className="text-[var(--color-accent)]" />
-            </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Always-On Receptionist</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              We build a 24/7 virtual receptionist that greets callers, answers questions, qualifies leads, and books appointments — keeping your business running at full capacity, around the clock.
-            </p>
-          </div>
-
-          {/* Strategy */}
-          <div className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover">
-            <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
-              <Lightbulb size={20} className="text-[var(--color-accent)]" />
-            </div>
-            <h3 className="text-white font-semibold text-lg mb-3">Growth Consultation</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Not sure where to start? We audit your current call flow, identify where revenue is being lost, and design a bespoke system that fits your business goals perfectly.
-            </p>
-            <div className="bg-[rgba(0,0,0,0.3)] rounded-lg p-4 code-block">
-              <div className="text-muted-foreground text-xs mb-2">automation_agent.py</div>
-              <pre className="text-xs leading-relaxed whitespace-pre">{[
-                'class AutomationAgent:',
-                '  def __init__(self, activation_limit):',
-                '    self.activation_limit = activation_limit',
-                '    self.current_mode = "idle"',
-              ].join('\n')}</pre>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

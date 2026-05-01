@@ -1,5 +1,5 @@
 import { Clock, MessageCircle, Zap } from 'lucide-react';
-import { useStaggerReveal } from '@/hooks/useScrollReveal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const benefits = [
   {
@@ -20,7 +20,7 @@ const benefits = [
 ];
 
 export default function Benefits() {
-  const ref = useStaggerReveal<HTMLDivElement>();
+  const ref = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="py-24 px-6">
@@ -33,16 +33,13 @@ export default function Benefits() {
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Reliable, professional, and always on</p>
         </div>
 
-        <div ref={ref} className="grid md:grid-cols-3 gap-6">
+        <div ref={ref} className="fade-in-up grid md:grid-cols-3 gap-12 md:gap-16">
           {benefits.map((b) => (
-            <div
-              key={b.title}
-              className="fade-in-up bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8 card-hover"
-            >
-              <div className="w-11 h-11 rounded-lg bg-[rgba(0,0,0,0.3)] shadow-[inset_0_2px_1px_rgba(207,231,255,0.15)] flex items-center justify-center mb-5">
+            <div key={b.title} className="text-center md:text-left">
+              <div className="w-12 h-12 rounded-xl bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] flex items-center justify-center mb-5 mx-auto md:mx-0">
                 <b.icon size={20} className="text-[var(--color-accent)]" />
               </div>
-              <h3 className="text-white font-semibold text-lg mb-3">{b.title}</h3>
+              <h3 className="font-['Instrument_Serif'] text-xl font-normal text-white mb-3">{b.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>
             </div>
           ))}

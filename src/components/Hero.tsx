@@ -140,6 +140,12 @@ export default function Hero() {
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60 pointer-events-none" />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]">
+        <div
+          className="w-[700px] h-[500px] rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(ellipse, rgba(212,168,67,0.08) 0%, transparent 65%)' }}
+        />
+      </div>
       <div ref={spotRef} className="hero-spotlight" />
 
       <div className="relative z-10 max-w-[800px] px-6 hero-stagger">
