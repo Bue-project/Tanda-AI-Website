@@ -47,6 +47,19 @@ export default function Benefits() {
             </div>
           ))}
         </div>
+
+        <div className="mt-14 text-center">
+          <p className="text-white/40 text-sm font-['Inter'] mb-3">Sounds right for your business?</p>
+          <a
+            href="https://calendar.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[var(--color-accent)] hover:text-white text-sm font-semibold transition-colors duration-200 group"
+          >
+            Book a free 20-minute call
+            <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

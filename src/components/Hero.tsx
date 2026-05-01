@@ -6,7 +6,6 @@ export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const spotRef = useRef<HTMLDivElement>(null);
 
-  // Particle system
   useEffect(() => {
     const canvas = canvasRef.current;
     const hero = heroRef.current;
@@ -170,7 +169,7 @@ export default function Hero() {
         </a>
 
         <div className="mt-16">
-          <ChevronDown className="mx-auto text-muted-foreground animate-bounce-slow" size={28} />
+          <ChevronDown className="mx-auto text-muted-foreground animate-float" size={28} />
         </div>
       </div>
     </section>

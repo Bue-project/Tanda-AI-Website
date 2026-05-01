@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import WhatWeDo from '@/components/WhatWeDo';
+import StatStrip from '@/components/StatStrip';
 import Benefits from '@/components/Benefits';
 import Services from '@/components/Services';
 import Features from '@/components/Features';
@@ -19,6 +20,7 @@ export default function Index() {
       <Navbar />
       <Hero />
       <WhatWeDo />
+      <StatStrip />
       <Benefits />
       <Services />
       <Features />
@@ -30,7 +32,7 @@ export default function Index() {
               Revenue Calculator
             </span>
             <h2 className="font-['Instrument_Serif'] text-[clamp(2rem,4vw,3rem)] font-normal text-white mt-2 mb-3">
-              What Is Your Practice Losing Right Now?
+              What Is Your Business Losing Right Now?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto font-['Inter']">
               Move the sliders to see your real revenue leakage in seconds.

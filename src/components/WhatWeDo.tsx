@@ -5,7 +5,7 @@ export default function WhatWeDo() {
 
   return (
     <section className="py-24 px-6">
-      <div ref={ref} className="fade-in-up max-w-[800px] mx-auto text-center">
+      <div ref={ref} className="scale-in max-w-[800px] mx-auto text-center">
         <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-6">
           What We Do
         </span>

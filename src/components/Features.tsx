@@ -35,6 +35,17 @@ export default function Features() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="https://calendar.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-[var(--color-border-strong)] text-white/70 hover:text-white hover:border-[var(--color-accent)] rounded-full px-7 py-3 text-sm transition-colors duration-200"
+          >
+            See how it works for your business →
+          </a>
+        </div>
       </div>
     </section>
   );

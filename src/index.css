@@ -72,10 +72,41 @@
   transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Directional variants */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale in (premium entrance for key statements) */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Hero stagger */
@@ -97,12 +128,35 @@
   }
 }
 
+/* Gold border glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 168, 67, 0);
+    border-color: rgba(212, 168, 67, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 24px 6px rgba(212, 168, 67, 0.12);
+    border-color: rgba(212, 168, 67, 0.65);
+  }
+}
+.border-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
 /* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
@@ -111,7 +165,6 @@
 .card-hover {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -161,13 +214,12 @@
   -webkit-backdrop-filter: blur(16px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-
 .nav-scrolled {
   background: rgba(13, 27, 46, 0.94) !important;
   box-shadow: 0 18px 45px rgba(0, 10, 30, 0.5);
 }
 
-/* Bounce chevron */
+/* Bounce chevron — kept for reference */
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }

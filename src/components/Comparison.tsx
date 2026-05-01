@@ -10,12 +10,15 @@ const rows: [string, string][] = [
 ];
 
 export default function Comparison() {
-  const ref = useScrollReveal<HTMLDivElement>();
+  const headerRef = useScrollReveal<HTMLDivElement>();
+  const leftRef = useScrollReveal<HTMLDivElement>();
+  const rightRef = useScrollReveal<HTMLDivElement>();
+  const ctaRef = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="py-24 px-6">
-      <div ref={ref} className="fade-in-up max-w-[1000px] mx-auto">
-        <div className="text-center mb-14">
+      <div className="max-w-[1000px] mx-auto">
+        <div ref={headerRef} className="fade-in-up text-center mb-14">
           <span className="inline-flex items-center gap-2 bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.25)] rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-[var(--color-accent)] mb-4">
             Comparison
           </span>
@@ -24,7 +27,7 @@ export default function Comparison() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-[var(--color-bg-card)] border border-[var(--color-accent)]/30 rounded-2xl p-8">
+          <div ref={leftRef} className="fade-in-left border-glow-pulse bg-[var(--color-bg-card)] rounded-2xl p-8">
             <h3 className="text-[var(--color-accent)] font-semibold text-lg mb-6">With Tanda</h3>
             <ul className="space-y-4">
               {rows.map(([item]) => (
@@ -36,7 +39,7 @@ export default function Comparison() {
             </ul>
           </div>
 
-          <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8">
+          <div ref={rightRef} className="fade-in-right bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-2xl p-8">
             <h3 className="text-muted-foreground font-semibold text-lg mb-6">Without</h3>
             <ul className="space-y-4">
               {rows.map(([, item]) => (
@@ -47,6 +50,23 @@ export default function Comparison() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div ref={ctaRef} className="fade-in-up mt-10 bg-[rgba(212,168,67,0.07)] border border-[rgba(212,168,67,0.2)] rounded-2xl p-10 text-center">
+          <p className="font-['Instrument_Serif'] text-[clamp(1.5rem,3vw,2rem)] text-white mb-2">
+            Stop losing leads. Start today.
+          </p>
+          <p className="text-white/45 text-sm font-['Inter'] mb-7">
+            Join the businesses already running on Tanda systems.
+          </p>
+          <a
+            href="https://calendar.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-black rounded-full px-9 py-3.5 font-semibold text-sm btn-glow"
+          >
+            Book A Free Call →
+          </a>
         </div>
       </div>
     </section>
