@@ -6,43 +6,45 @@
 
 @layer base {
   :root {
-    --background: 220 45% 3%;
+    /* Navy blue base */
+    --background: 215 57% 12%;
     --foreground: 0 0% 100%;
 
-    --card: 220 30% 6%;
+    --card: 215 52% 16%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 30% 6%;
+    --popover: 215 52% 16%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 40 55% 55%;
+    --primary: 40 62% 55%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 213 30% 12%;
-    --secondary-foreground: 213 20% 85%;
+    --secondary: 215 45% 20%;
+    --secondary-foreground: 215 20% 88%;
 
-    --muted: 216 15% 20%;
-    --muted-foreground: 216 15% 75%;
+    --muted: 215 38% 26%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 40 55% 55%;
+    --accent: 40 62% 55%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 213 30% 15%;
-    --input: 213 30% 15%;
-    --ring: 40 55% 55%;
+    --border: 215 40% 24%;
+    --input: 215 40% 24%;
+    --ring: 40 62% 55%;
 
     --radius: 1rem;
 
-    --color-bg: #04070d;
+    /* Custom tokens */
+    --color-bg: #0D1B2E;
     --color-accent: #D4A843;
-    --color-accent-glow: rgba(212, 168, 67, 0.15);
-    --color-border: rgba(216, 231, 242, 0.07);
-    --color-border-strong: rgba(216, 231, 242, 0.15);
-    --color-bg-card: rgba(207, 231, 255, 0.04);
-    --color-bg-card-hover: rgba(207, 231, 255, 0.07);
+    --color-accent-glow: rgba(212, 168, 67, 0.18);
+    --color-border: rgba(255, 255, 255, 0.09);
+    --color-border-strong: rgba(255, 255, 255, 0.18);
+    --color-bg-card: rgba(255, 255, 255, 0.05);
+    --color-bg-card-hover: rgba(255, 255, 255, 0.09);
   }
 }
 
@@ -112,7 +114,7 @@
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   border-color: var(--color-border-strong);
 }
 
@@ -132,7 +134,7 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 168, 67, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.08) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 1;
@@ -145,7 +147,7 @@
 }
 .btn-glow:hover {
   transform: scale(1.04);
-  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.4);
+  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.45);
 }
 
 /* Pricing pill */
@@ -161,8 +163,8 @@
 }
 
 .nav-scrolled {
-  background: rgba(4, 7, 13, 0.92) !important;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
+  background: rgba(13, 27, 46, 0.94) !important;
+  box-shadow: 0 18px 45px rgba(0, 10, 30, 0.5);
 }
 
 /* Bounce chevron */
@@ -189,7 +191,7 @@
 
 /* Calculator slider theming */
 .calculator-slider [data-slot="slider-track"] {
-  background-color: rgba(216, 231, 242, 0.07);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 .calculator-slider [data-slot="slider-range"] {
   background-color: var(--color-accent);
@@ -197,5 +199,5 @@
 .calculator-slider [data-slot="slider-thumb"] {
   border-color: var(--color-accent);
   background-color: var(--color-accent);
-  box-shadow: 0 0 12px rgba(212, 168, 67, 0.4);
+  box-shadow: 0 0 12px rgba(212, 168, 67, 0.45);
 }
